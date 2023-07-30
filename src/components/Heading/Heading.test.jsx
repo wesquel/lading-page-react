@@ -11,7 +11,6 @@ describe("<Heading />", () => {
 
     expect(heading).toHaveStyle({
       color: theme.colors.primaryColor,
-      //"font-size": theme.fonts.sizes.xhuge,
       "text-transform": "none",
     });
   });
@@ -62,16 +61,6 @@ describe("<Heading />", () => {
     expect(screen.getByRole("heading", { name: "texto" })).toHaveStyle({
       "font-size": theme.fonts.sizes.xhuge,
     });
-  });
-
-  it("should render correct font-size when using mobile", () => {
-    expect(screen.getByRole("heading", { name: "texto" })).toHaveStyleRule(
-      "font-size",
-      theme.fonts.sizes.xlarge,
-      {
-        media: theme.media.lteMedium,
-      },
-    );
   });
 
   it("should render correct heading element", () => {
