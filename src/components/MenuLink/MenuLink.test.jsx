@@ -9,11 +9,11 @@ describe("<MenuLink />", () => {
   });
 
   it("should render open in a new tab", () => {
-    renderTheme(
+    const { container } = renderTheme(
       <MenuLink link="http://localhost" newTab={true}>
         Children
       </MenuLink>,
     );
-    expect(screen.getByRole("link", { name: "Children" })).toHaveAttribute("target", "_blank");
+    expect(container.firstChild).toHaveAttribute("target", "_blank");
   });
 });
