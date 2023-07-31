@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/react";
+import { ThemeProvider } from "styled-components";
 import { Heading } from ".";
 import { renderTheme } from "../../styles/render-theme";
 import { theme } from "../../styles/theme";
-import { ThemeProvider } from "styled-components";
 
 describe("<Heading />", () => {
   it("should render with default values", () => {
@@ -11,6 +11,7 @@ describe("<Heading />", () => {
 
     expect(heading).toHaveStyle({
       color: theme.colors.primaryColor,
+      "font-size": theme.fonts.sizes.xhuge,
       "text-transform": "none",
     });
   });
@@ -60,6 +61,24 @@ describe("<Heading />", () => {
 
     expect(screen.getByRole("heading", { name: "texto" })).toHaveStyle({
       "font-size": theme.fonts.sizes.xhuge,
+    });
+  });
+
+  it("should render correct font-size when using mobile", () => {
+    renderTheme(<Heading size="huge">texto</Heading>);
+    const heading = screen.getByRole("heading", { name: "texto" });
+
+    expect(heading).toHaveStyleRule("font-size", theme.fonts.sizes.xlarge, {
+      media: theme.media.lteMedium,
+    });
+  });
+
+  it("should render with uppercase letters", () => {
+    renderTheme(<Heading uppercase={true}>texto</Heading>);
+    const heading = screen.getByRole("heading", { name: "texto" });
+
+    expect(heading).toHaveStyle({
+      "text-transform": "uppercase;",
     });
   });
 
