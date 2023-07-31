@@ -78,7 +78,7 @@ describe("<Heading />", () => {
     const heading = screen.getByRole("heading", { name: "texto" });
 
     expect(heading).toHaveStyle({
-      "text-transform": "uppercase;",
+      "text-transform": "uppercase",
     });
   });
 
