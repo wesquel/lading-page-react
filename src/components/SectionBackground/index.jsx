@@ -2,6 +2,7 @@ import P from "prop-types";
 import { SectionContainer } from "../SectionContainer";
 import * as Styled from "./styles";
 
+//not completed
 export const SectionBackground = ({ children, background = false }) => {
   return (
     <Styled.Container background={background}>
