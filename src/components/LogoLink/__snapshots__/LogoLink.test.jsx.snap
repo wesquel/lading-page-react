@@ -19,6 +19,7 @@ exports[`<LogoLink /> should match snapshot 1`] = `
   primary-color: #0A1128;
   secondary-color: #dc143c;
   white: #FFFFFF;
+  medium-gray: #DDDDDD;
 }
 
 .c1 fonts family {

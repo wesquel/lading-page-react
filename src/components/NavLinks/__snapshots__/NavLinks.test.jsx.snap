@@ -15,6 +15,7 @@ exports[`<NavLinks /> should match snapshot 1`] = `
   primary-color: #0A1128;
   secondary-color: #dc143c;
   white: #FFFFFF;
+  medium-gray: #DDDDDD;
 }
 
 .c0 fonts family {
@@ -88,6 +89,7 @@ exports[`<NavLinks /> should match snapshot 1`] = `
 }
 
 <nav
+  aria-label="Main menu"
   class="c0"
 >
   <a
